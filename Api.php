@@ -55,6 +55,7 @@ class Api
         if ($sms instanceof Sms) {
             $params['to'] = $sms->to;
             $params['text'] = $sms->text;
+            $params['ip'] = $sms->ip;
         } else if ($sms instanceof SmsPool) {
             foreach ($sms->messages as $message) {
                 $params['multi'][$message->to] = $message->text;
